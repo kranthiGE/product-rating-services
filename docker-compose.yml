@@ -1,0 +1,39 @@
+version: '3'
+services:
+  product-rating-services:
+    build:
+      context: ./apps/roduct-rating-services
+      dockerfile: Dockerfile
+    image: product-rating-services:latest
+    ports:
+      - "9999:8080"
+    environment:
+      AWS_ACCESS_KEY_ID:
+      AWS_REGION:
+      AWS_SECRET_ACCESS_KEY:
+      DEBUG:
+      DOCKER_COMPOSE: 'true'
+      FILTER_HOST:
+      FILTER_PORT:
+      PORT:
+      STORAGE_HOST:
+      STORAGE_PORT:
+
+  spring-product-services:
+    build:
+      context: ./apps/spring-product-services
+      dockerfile: Dockerfile
+    image: spring-product-services:latest
+    ports:
+      - "8888:8080"
+    environment:
+      AWS_ACCESS_KEY_ID:
+      AWS_REGION:
+      AWS_SECRET_ACCESS_KEY:
+      DEBUG:
+      DOCKER_COMPOSE: 'true'
+      FILTER_HOST:
+      FILTER_PORT:
+      PORT:
+      STORAGE_HOST:
+      STORAGE_PORT:
