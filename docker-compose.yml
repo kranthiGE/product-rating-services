@@ -2,7 +2,7 @@ version: '3'
 services:
   product-rating-services:
     build:
-      context: ./apps/roduct-rating-services
+      context: ./apps/product-rating-services
       dockerfile: Dockerfile
     image: product-rating-services:latest
     ports:
