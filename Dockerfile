@@ -1,13 +1,15 @@
 FROM openjdk:8-jdk-alpine
 MAINTAINER kranthikirana
-VOLUME /tmp
+VOLUME /apps
+WORKDIR /apps
+RUN git clone https://github.com/kranthiGE/product-rating-services.git
+
 
 FROM maven:3.5-jdk-8-alpine
-WORKDIR /tmp
-COPY --from=0 /apps/product-rating-services /tmp
+WORKDIR /apps/product-rating-services
 RUN mvn install
 
-COPY /target/product-rating-services-0.0.1-SNAPSHOT.jar /opt/services/lib/
+COPY /target/product-rating-services-0.0.1-SNAPSHOT.jar /opt/services/
 ENTRYPOINT ["/usr/bin/java"]
-CMD ["-jar", "/opt/services/lib/product-rating-services-0.0.1-SNAPSHOT.jar"]
+CMD ["-jar", "/opt/services/product-rating-services-0.0.1-SNAPSHOT.jar"]
 EXPOSE 9999
