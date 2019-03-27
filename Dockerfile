@@ -1,9 +1,6 @@
 FROM openjdk:8-jdk-alpine
 MAINTAINER kranthikirana
 VOLUME /apps
-WORKDIR /apps
-RUN git clone https://github.com/kranthiGE/product-rating-services.git
-
 
 FROM maven:3.5-jdk-8-alpine
 WORKDIR /apps/product-rating-services
