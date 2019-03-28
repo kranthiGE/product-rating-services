@@ -16,7 +16,7 @@ Description: Sample project that provides RESTful APIs on products shopstore
  	- docker images
  	- docker tag 79b782d7ef96 kranthikirana@product-rating-services:latest
  	- docker push kranthikirana/product-rating-services:latest
- 	
+ - docker stop <containerId>
 ## Running on a EC2 (RHEL v1.0)
  - Install the following
  `
