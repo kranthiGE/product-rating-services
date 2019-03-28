@@ -21,7 +21,7 @@ services:
 
   spring-product-services:
     build:
-      context: ./apps/spring-product-services
+      context: ./apps/spring-services-sample
       dockerfile: Dockerfile
     image: spring-product-services:latest
     ports:
