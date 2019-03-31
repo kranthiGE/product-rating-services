@@ -24,9 +24,17 @@ Description: Sample project that provides RESTful APIs on products shopstore
   - sudo yum install docker
   - sudo yum install -y git
   - sudo yum groupinstall -y 'Development Tools'
-  
+  - sudo service docker start
+  - sudo user -a -G docker $USER 
  `
+## Pushing images to ECR
+ `
+  [ec2-user@ip-172-31-5-164 ~]$ docker tag product-rating-services 094592729622.dkr.ecr.ap-south-1.amazonaws.com/product-rating-services
+  [ec2-user@ip-172-31-5-164 ~]$ docker tag spring-product-services 094592729622.dkr.ecr.ap-south-1.amazonaws.com/spring-product-services
+  
+ ` 
 URL: 
+	- 
 
 References:
 =======

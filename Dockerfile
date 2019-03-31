@@ -9,5 +9,5 @@ ADD src src
 RUN ["mvn", "clean", "package"]
 
 ENTRYPOINT ["/usr/bin/java"]
-CMD ["-jar", "apps/product-rating-services/target/product-rating-services-0.0.1-SNAPSHOT.jar"]
+CMD ["-jar", "target/product-rating-services-0.0.1-SNAPSHOT.jar"]
 EXPOSE 9999
