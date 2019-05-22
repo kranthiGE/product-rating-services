@@ -31,7 +31,6 @@ Description: Sample project that provides RESTful APIs on products shopstore
  `
   [ec2-user@ip-172-31-5-164 ~]$ docker tag product-rating-services 094592729622.dkr.ecr.ap-south-1.amazonaws.com/product-rating-services
   [ec2-user@ip-172-31-5-164 ~]$ docker tag spring-product-services 094592729622.dkr.ecr.ap-south-1.amazonaws.com/spring-product-services
-
  `
 ## Install ECS agent
   - Copy below content into bootup script text creation during EC2 instance creation.
@@ -58,6 +57,14 @@ Description: Sample project that provides RESTful APIs on products shopstore
     sudo yum install ecs-init
     sudo start ecs
   `
+
+## Creating task definition
+ - Create task definition files
+ - And using aws ecs cli, register the tasks
+ `
+ aws ecs register-task-definition --cli-input-json file://talk-definition.json
+ `
+
 URL:
 	-
 
