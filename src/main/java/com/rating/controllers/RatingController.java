@@ -19,7 +19,7 @@ public class RatingController {
 
 	@Autowired
 	private RatingService ratingService;
-	
+
 	@GetMapping
 	public List<Rating> findRatingByProductId(
 	@RequestParam(required = false, defaultValue = "0") Integer productId) throws ResourceNotFoundException{
@@ -27,9 +27,10 @@ public class RatingController {
 			return (List<Rating>) ratingService.findAll();
 		}
 		Rating rating = ratingService.getById(productId);
+		//Testing the re-build of docker image
 		if(rating == null)
 			throw new ResourceNotFoundException("Product id not found: " + productId);
 		return Arrays.asList(rating);
 	}
-	
+
 }

@@ -6,7 +6,8 @@ WORKDIR apps/product-rating-services/
 
 ADD pom.xml pom.xml
 ADD src src
-RUN ["mvn", "clean", "package"]
+ADD settings-mvn.xml settings-mvn.xml
+RUN ["mvn", "-s", "settings-mvn.xml", "clean", "package"]
 
 ENTRYPOINT ["/usr/bin/java"]
 CMD ["-jar", "target/product-rating-services-0.0.1-SNAPSHOT.jar"]
