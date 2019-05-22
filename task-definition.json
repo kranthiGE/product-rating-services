@@ -1,0 +1,19 @@
+{
+  "family": "product-rating-service",
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "094592729622.dkr.ecr.ap-south-1.amazonaws.com/product-rating-services:latest",
+      "cpu": 1024,
+      "memoryReservation": 512,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "command": [],
+      "essential": true
+    }
+  ]
+}
