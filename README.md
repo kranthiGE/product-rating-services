@@ -62,8 +62,19 @@ Description: Sample project that provides RESTful APIs on products shopstore
  - Create task definition files
  - And using aws ecs cli, register the tasks
  `
- aws ecs register-task-definition --cli-input-json file://talk-definition.json
+ aws ecs register-task-definition --cli-input-json file://task-definition.json
  `
+ ## Create a stopped docker container
+ `
+  docker create <<imageId>>
+
+  docker ps -a //to view the container id
+
+  docker insepect <<containerId>> // to view the details inside the container
+
+  docker cp a0cf69d86d04:/usr/local/app .
+ `
+
 
 URL:
 	-
