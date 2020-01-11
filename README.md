@@ -74,7 +74,10 @@ Description: Sample project that provides RESTful APIs on products shopstore
 
   docker cp a0cf69d86d04:/usr/local/app .
  `
-
+ ## Debug inside the container
+`
+docker exec -it feed bash
+`
 
 URL:
 	-
