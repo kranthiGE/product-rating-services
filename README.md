@@ -77,6 +77,8 @@ Description: Sample project that provides RESTful APIs on products shopstore
  ## Debug inside the container
 `
 docker exec -it feed bash
+docker run -ti --entrypoint=sh test_image
+
 `
 
 URL:
